@@ -1,0 +1,15 @@
+{
+    "total_logs": 5,
+    "log_levels": {
+      "INFO": 2,
+      "WARNING": 1,
+      "ERROR": 2
+    },
+    "top_errors": [
+      {"message": "Database connection failed", "count": 1},
+      {"message": "API timeout error", "count": 1}
+    ],
+    "first_log": "2025-01-30 15:23:01",
+    "last_log": "2025-01-30 15:30:00"
+  }
+  
