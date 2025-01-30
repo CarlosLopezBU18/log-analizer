@@ -1,0 +1,13 @@
+{
+  "total_logs": 5,
+  "log_levels": {
+    "INFO": 2,
+    "WARNING": 1,
+    "ERROR": 2
+  },
+  "top_errors": [
+    {"message": "Database connection lost", "count": 2}
+  ],
+  "first_log": "2025-01-30 12:00:00",
+  "last_log": "2025-01-30 12:20:30"
+}

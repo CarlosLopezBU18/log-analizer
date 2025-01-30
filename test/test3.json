@@ -1,0 +1,11 @@
+{
+    "total_logs": 3,
+    "log_levels": {
+      "INFO": 2,
+      "WARNING": 1
+    },
+    "top_errors": [],
+    "first_log": "2025-01-30 14:00:00",
+    "last_log": "2025-01-30 14:20:30"
+  }
+  

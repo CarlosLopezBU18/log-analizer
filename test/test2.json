@@ -1,0 +1,14 @@
+{
+    "total_logs": 4,
+    "log_levels": {
+      "ERROR": 4
+    },
+    "top_errors": [
+      {"message": "API request failed", "count": 2},
+      {"message": "Database timeout", "count": 1},
+      {"message": "User authentication error", "count": 1}
+    ],
+    "first_log": "2025-01-30 13:00:00",
+    "last_log": "2025-01-30 13:03:30"
+  }
+  
