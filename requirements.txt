@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+multiprocessing
+threading
+collections
+heapq
+re
+pytest
