@@ -11,6 +11,7 @@ class Level(Enum):
 def load_json_files(json_files: List[str]):
     dicts = []
     for json_file in json_files:
-        dicts.append(json.load(json_file))
+        with open(json_file, 'r') as f:
+            dicts.append(json.load(f))
 
     return dicts

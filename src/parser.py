@@ -19,13 +19,13 @@ class DataParser:
                 
                 parsed.append({'date': date, 'hour': hour, 'level': level, 'message': message[:-1]})
 
-            file.close()
+            analisis = analize(parsed)
             with self.lock:
-                self.results = analize(parsed)
+                self.results.append(analisis)
 
-            output_name = self.output_path + path.split('/')[-1].split('.')[0] + '.json'
+            output_name = self.output_path + '/' + path.split('/')[-1].split('.')[0] + '.json'
             with open(output_name, 'w') as save_json:
-                json.dump(self.results, save_json,indent=1)
+                json.dump(analisis, save_json,indent=1)
         
 
     def load_sources(self, srcs: List[str]):
@@ -39,3 +39,13 @@ class DataParser:
         
         for thread in threads:
             thread.join()
+
+
+# LOGS_PATH: str = '/Users/more/Desktop/code/DailyPython/log-analizer/logs/test1.log'
+# JSON_TEST_PATH: str = '/Users/more/Desktop/code/DailyPython/log-analizer/test/json'
+# OUTPUT_PATH: str = '/Users/more/Desktop/code/DailyPython/log-analizer/test/out'
+
+# dp = DataParser(OUTPUT_PATH)
+# dp.load_sources([LOGS_PATH])
+
+# print(dp.results)

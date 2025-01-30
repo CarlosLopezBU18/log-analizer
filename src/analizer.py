@@ -9,7 +9,7 @@ def analize(parsed: List[Dict[str, str]]) -> Dict[str, Any]:
         return {'total_logs': 0, 'log_levels': {}, 'top_errors': [], 'first_log': None, 'last_log': None}
 
     total_logs: int = len(parsed)
-    log_levels: Dict[str, int] = {Level.INFO.name: 0, Level.WARNING.name: 0, Level.ERROR.name: 0}
+    log_levels: Dict[str, int] = {}
 
     top_errors: List[Dict[str, str|int]] = []
     message_to_index: Dict[str, int] = {}
@@ -19,9 +19,14 @@ def analize(parsed: List[Dict[str, str]]) -> Dict[str, Any]:
 
     max_index:int = 0
     for entry in parsed:
-        log_levels[entry['level']] += 1
 
-        if entry['level'] == Level.ERROR.name:
+        curr_level = entry['level']
+        if curr_level not in log_levels:
+            log_levels[curr_level] = 1
+        else:
+            log_levels[curr_level] += 1
+
+        if curr_level == Level.ERROR.name:
             curr_message:str = entry['message']
             
             if curr_message not in message_to_index:
