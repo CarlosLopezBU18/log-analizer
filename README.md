@@ -105,7 +105,7 @@ python src/analyzer.py
 ### 2⃣ (Opcional) Levantar la API REST  
 Si implementaste la API con FastAPI, puedes iniciarla con:  
 ```bash
-uvicorn src.api:app --reload
+uvicorn main:app --reload
 ```
 Luego, accede a `http://127.0.0.1:8000/docs` para ver la documentación interactiva.
 
